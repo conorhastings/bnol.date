@@ -3,7 +3,31 @@
 <head>
 	<title>BNOL Next Date</title>
 </head>
-<body style='background-image: linear-gradient(-90deg, #13D899, #918FFF);'>
+<style>
+@-webkit-keyframes BNOLAnimation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes BNOLAnimation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes BNOLAnimation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+</style>
+<body style='
+background-image: linear-gradient(-90deg, #13D899, #918FFF);
+background-size: 200% 200%;
+
+-webkit-animation: BNOLAnimation 5s ease infinite;
+-moz-animation: BNOLAnimation 5s ease infinite;
+animation: BNOLAnimation 5s ease infinite;
+'>
 	<div style='display: flex; align-items: center; justify-content: center; height: 90vh;'>
 		<h1 id='h1' style='font-size:8em; font-family: Helvetica; color: #ffffff;'></h1>
 	</div>
