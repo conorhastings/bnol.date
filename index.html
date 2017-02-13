@@ -28,8 +28,8 @@ background-size: 200% 200%;
 -moz-animation: BNOLAnimation 5s ease infinite;
 animation: BNOLAnimation 5s ease infinite;
 '>
-	<div style='display: flex; align-items: center; justify-content: center; height: 90vh;'>
-		<marquee><h1 id='h1' style='font-size:8em; font-family: Helvetica; color: #ffffff;'></h1></marquee>
+	<div id="container" style='display: flex; align-items: center; justify-content: center; height: 90vh; flex-direction:column;'>
+		<h1 id='h1' style='font-size:8em; font-family: Helvetica; color: #ffffff;'></h1>
 	</div>
 	<script>
 		function getThirdWednesday(monthAdd = 1) {
@@ -67,7 +67,14 @@ animation: BNOLAnimation 5s ease infinite;
 			thirdWednesday = getThirdWednesday(2);
 			month = month + 1;
 		}
-
+		if (month % 2 === 0) {
+			var whiteElephant = document.createElement('h1');
+			whiteElephant.innerHTML = "don't forget white elephant";
+			whiteElephant.style.fontSize = "6em";
+			whiteElephant.style.fontFamily = "Helvetica";
+			whiteElephant.style.color = "#FFF";
+			document.getElementById('container').appendChild(whiteElephant);
+		}
 		var displayDate = new Date(`${month}/${thirdWednesday}/${year}`).toLocaleDateString("en-US", {
 			month: "long",
 			day: "2-digit",
